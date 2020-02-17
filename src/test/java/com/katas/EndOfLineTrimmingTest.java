@@ -52,4 +52,9 @@ public class EndOfLineTrimmingTest {
     assertThat(EOL.trim(" a \r\n b \n c\t"), equalTo(" a\r\nb\nc"));
   }
 
+  @Test
+  public void keepsBeginningWhitespaces() throws Throwable {
+    assertThat(EOL.trim(" a"), equalTo(" a"));
+  }
+
 }
