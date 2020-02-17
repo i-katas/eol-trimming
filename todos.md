@@ -11,3 +11,4 @@
 - ~~"a \r\n" => "a\r\n"~~
 - ~~EOL.skip()?~~
 - ~~make skip() private?~~
+- ~~trim(null)?~~

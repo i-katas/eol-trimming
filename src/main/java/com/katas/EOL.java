@@ -5,6 +5,10 @@ public class EOL {
   private static final int BACKWORD = -1;
 
   public static String trim(String lines) {
+    if(lines == null) {
+      return null;
+    }
+
     int pos = 0, n = lines.length();
     StringBuilder out = new StringBuilder(n);
     for(int i; ; pos = i + 1 + skip(lines, i + 1, FORWARD)) {

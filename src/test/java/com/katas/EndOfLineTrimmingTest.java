@@ -2,7 +2,7 @@ package com.katas;
 
 import org.junit.Test;
 import static org.junit.Assert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 public class EndOfLineTrimmingTest {
   @Test
@@ -19,6 +19,11 @@ public class EndOfLineTrimmingTest {
   @Test
   public void trimmingBlankLine() throws Throwable {
     assertThat(EOL.trim(" "), equalTo(""));
+  }
+
+  @Test
+  public void trimmingNull() throws Throwable {
+    assertThat(EOL.trim(null), is(nullValue()));
   }
 
   @Test
