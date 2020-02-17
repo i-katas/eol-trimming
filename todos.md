@@ -10,4 +10,4 @@
 - ~~"a\t" => "a"~~
 - ~~"a \r\n" => "a\r\n"~~
 - ~~EOL.skip()?~~
-- make skip() private?
+- ~~make skip() private?~~

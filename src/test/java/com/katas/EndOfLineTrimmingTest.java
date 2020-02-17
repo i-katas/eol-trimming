@@ -47,18 +47,4 @@ public class EndOfLineTrimmingTest {
     assertThat(EOL.trim(" a \r\n b \n c\t"), equalTo(" a\r\nb\nc"));
   }
 
-  @Test
-  public void skipRightWhitespaces() throws Throwable {
-    assertThat(EOL.skip("a", 0, -1), equalTo(0));
-    assertThat(EOL.skip(" ", 0, -1), equalTo(1));
-    assertThat(EOL.skip("  ", 1, -1), equalTo(2));
-  }
-
-  @Test
-  public void skipLeftWhitespaces() throws Throwable {
-    assertThat(EOL.skip("a", 0, 1), equalTo(0));
-    assertThat(EOL.skip(" ", 0, 1), equalTo(1));
-    assertThat(EOL.skip("  ", 0, 1), equalTo(2));
-  }
-
 }

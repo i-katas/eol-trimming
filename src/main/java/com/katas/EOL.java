@@ -30,7 +30,7 @@ public class EOL {
     return -1;
   }
 
-  public static int skip(String s, int pos, int dir) {
+  private static int skip(String s, int pos, int dir) {
     int n = 0;
     for(int size = s.length(); pos >= 0 && pos < size; ) {
       switch(s.charAt(pos)) {
