@@ -1,12 +1,13 @@
 package com.katas;
 
 public class EOL {
+  private static final int FORWARD = 1;
   private static final int BACKWORD = -1;
 
   public static String trim(String lines) {
     int pos = 0, n = lines.length();
     StringBuilder out = new StringBuilder(n);
-    for(int i ; ; pos = i + 1) {
+    for(int i ; ; pos = i + 1 + skip(lines, i + 1, FORWARD)) {
       i = lines.indexOf('\n', pos);
       if(i == -1) {
         break;
