@@ -33,7 +33,7 @@ public class EndOfLineTrimmingTest {
   }
 
   @Test
-  public void skipLastWhitespaces() throws Throwable {
+  public void skipRightWhitespaces() throws Throwable {
     assertThat(EOL.skip("a", 0), equalTo(0));
     assertThat(EOL.skip(" ", 0), equalTo(1));
     assertThat(EOL.skip("  ", 1), equalTo(2));
