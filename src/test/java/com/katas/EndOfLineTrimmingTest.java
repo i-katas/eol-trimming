@@ -9,4 +9,10 @@ public class EndOfLineTrimmingTest {
   public void returnOriginalStringImmediatelyThatContainsNoWhitespaces() throws Throwable {
     assertThat(EOL.trim("a"), equalTo("a"));
   }
+
+  @Test
+  public void removesLastWhitespaces() throws Throwable {
+    assertThat(EOL.trim("a "), equalTo("a"));
+    assertThat(EOL.trim("a  "), equalTo("a"));
+  }
 }
