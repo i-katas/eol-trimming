@@ -12,11 +12,13 @@ public class EOL {
     int pos = 0, n = lines.length();
     StringBuilder out = new StringBuilder(n);
 
+    // trimming each of line whitespaces & tabs
     for(int i; (i = crlf(lines, pos)) != -1; pos = skip(lines, pos = i + 1, FORWARD) + pos) {
       out.append(lines.substring(pos, i - skip(lines, i - 1, BACKWORD)));
       out.append(lines.charAt(i));
     }
 
+    // trimming the last line whitespaces & tabs
     return out.append(lines.substring(pos, n - skip(lines, n - 1, BACKWORD))).toString();
   }
 
