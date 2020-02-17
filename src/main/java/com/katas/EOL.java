@@ -6,12 +6,11 @@ public class EOL {
     StringBuilder out = new StringBuilder(n);
     final int i = lines.indexOf('\n', pos);
     if(i != -1) {
-      n = i;
+      out.append(lines.substring(pos, i - skip(lines, i - 1)));
+      out.append('\n');
+      pos = i + 1;
     }
     out.append(lines.substring(pos, n - skip(lines, n - 1)));
-    if(i != -1) {
-      out.append('\n');
-    }
     return out.toString();
   }
 
