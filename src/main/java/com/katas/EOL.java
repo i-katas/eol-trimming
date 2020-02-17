@@ -11,6 +11,7 @@ public class EOL {
 
     int pos = 0, n = lines.length();
     StringBuilder out = new StringBuilder(n);
+
     for(int i; ; pos = i + 1 + skip(lines, i + 1, FORWARD)) {
       if((i = crlf(lines, pos)) == -1) {
         break;
@@ -19,8 +20,7 @@ public class EOL {
       out.append(lines.charAt(i));
     }
 
-    out.append(lines.substring(pos, n - skip(lines, n - 1, BACKWORD)));
-    return out.toString();
+    return out.append(lines.substring(pos, n - skip(lines, n - 1, BACKWORD))).toString();
   }
 
   private static int crlf(String s, int pos) {
