@@ -12,10 +12,7 @@ public class EOL {
     int pos = 0, n = lines.length();
     StringBuilder out = new StringBuilder(n);
 
-    for(int i; ; pos = i + 1 + skip(lines, i + 1, FORWARD)) {
-      if((i = crlf(lines, pos)) == -1) {
-        break;
-      }
+    for(int i; (i = crlf(lines, pos)) != -1; pos = i + 1 + skip(lines, i + 1, FORWARD)) {
       out.append(lines.substring(pos, i - skip(lines, i - 1, BACKWORD)));
       out.append(lines.charAt(i));
     }
