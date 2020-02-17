@@ -1,1 +1,6 @@
+# Gradle folders
+.gradle
+build
+
+# VIM swap files
 *.swp
