@@ -4,16 +4,15 @@ public class EOL {
   public static String trim(String lines) {
     int pos = 0, n = lines.length();
     StringBuilder out = new StringBuilder(n);
-    while(true) {
-      final int i = lines.indexOf('\n', pos);
-      if(i != -1) {
-        out.append(lines.substring(pos, i - skip(lines, i - 1)));
-        out.append('\n');
-        pos = i + 1;
-        continue;
+    for(int i ; ; pos = i + 1) {
+      i = lines.indexOf('\n', pos);
+      if(i == -1) {
+        break;
       }
-      break;
+      out.append(lines.substring(pos, i - skip(lines, i - 1)));
+      out.append('\n');
     }
+
     out.append(lines.substring(pos, n - skip(lines, n - 1)));
     return out.toString();
   }
