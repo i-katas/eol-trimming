@@ -35,12 +35,11 @@ public class EOL {
 
   private static int skip(String s, int pos, int dir) {
     int n = 0;
-    for(int size = s.length(); pos >= 0 && pos < size; ) {
+    for(int size = s.length(); pos >= 0 && pos < size; pos += dir) {
       switch(s.charAt(pos)) {
         case ' ':
         case '\t':
           n++;
-          pos += dir;
           break;
         default:
           return n;
