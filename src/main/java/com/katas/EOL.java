@@ -22,9 +22,16 @@ public class EOL {
 
   public static int skip(String s, int pos, int dir) {
     int n = 0;
-    for(int size = s.length(); pos >= 0 && pos < size && s.charAt(pos) == ' '; ) {
-      n++;
-      pos += dir;
+    for(int size = s.length(); pos >= 0 && pos < size; ) {
+      switch(s.charAt(pos)) {
+        case ' ':
+        case '\t':
+          n++;
+          pos += dir;
+          break;
+        default:
+          return n;
+      }
     }
     return n;
   }

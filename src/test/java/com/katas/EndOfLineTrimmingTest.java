@@ -33,6 +33,11 @@ public class EndOfLineTrimmingTest {
   }
 
   @Test
+  public void removesTabsInTheEndOfLine() throws Throwable {
+    assertThat(EOL.trim("a\t"), equalTo("a"));
+  }
+
+  @Test
   public void skipRightWhitespaces() throws Throwable {
     assertThat(EOL.skip("a", 0, -1), equalTo(0));
     assertThat(EOL.skip(" ", 0, -1), equalTo(1));

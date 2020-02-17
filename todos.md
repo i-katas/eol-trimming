@@ -7,7 +7,7 @@
 - ~~"a \n" => "a\n"~~
 - ~~"a \nb \n" => "a\nb\n"~~
 - ~~"a\n " => "a\n"~~
-- "a\t" => "a"
+- ~~"a\t" => "a"~~
 - "a \r\n" => "a\r\n"
 - ~~EOL.skip()?~~
 - make skip() private?
