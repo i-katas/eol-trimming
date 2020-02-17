@@ -7,17 +7,27 @@ public class EOL {
   public static String trim(String lines) {
     int pos = 0, n = lines.length();
     StringBuilder out = new StringBuilder(n);
-    for(int i ; ; pos = i + 1 + skip(lines, i + 1, FORWARD)) {
-      i = lines.indexOf('\n', pos);
-      if(i == -1) {
+    for(int i; ; pos = i + 1 + skip(lines, i + 1, FORWARD)) {
+      if((i = crlf(lines, pos)) == -1) {
         break;
       }
       out.append(lines.substring(pos, i - skip(lines, i - 1, BACKWORD)));
-      out.append('\n');
+      out.append(lines.charAt(i));
     }
 
     out.append(lines.substring(pos, n - skip(lines, n - 1, BACKWORD)));
     return out.toString();
+  }
+
+  private static int crlf(String s, int pos) {
+    for(int size = s.length(); pos < size; pos++) {
+      switch(s.charAt(pos)) {
+        case '\r':
+        case '\n':
+          return pos;
+      }
+    }
+    return -1;
   }
 
   public static int skip(String s, int pos, int dir) {

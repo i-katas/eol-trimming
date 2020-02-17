@@ -38,6 +38,11 @@ public class EndOfLineTrimmingTest {
   }
 
   @Test
+  public void removeCRLFBothSideWhitespaces() throws Throwable {
+    assertThat(EOL.trim("a \r\n b"), equalTo("a\r\nb"));
+  }
+
+  @Test
   public void skipRightWhitespaces() throws Throwable {
     assertThat(EOL.skip("a", 0, -1), equalTo(0));
     assertThat(EOL.skip(" ", 0, -1), equalTo(1));
