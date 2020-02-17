@@ -6,12 +6,9 @@ public class EOL {
     StringBuilder out = new StringBuilder(n);
     final int i = lines.indexOf('\n', pos);
     if(i != -1) {
-      n = i - 1;
+      n = i;
     }
-    while(n > 0 && lines.charAt(n - 1) == ' ') {
-      n--;
-    }
-    out.append(lines.substring(pos, n));
+    out.append(lines.substring(pos, n - skip(lines, n - 1)));
     if(i != -1) {
       out.append('\n');
     }
