@@ -28,6 +28,11 @@ public class EndOfLineTrimmingTest {
   }
 
   @Test
+  public void removeRightSideWhitespacesOfLineEncoding() throws Throwable {
+    //assertThat(EOL.trim("a\n b"), equalTo("a\nb"));
+  }
+
+  @Test
   public void skipLastWhitespaces() throws Throwable {
     assertThat(EOL.skip("a", 0), equalTo(0));
     assertThat(EOL.skip(" ", 0), equalTo(1));
