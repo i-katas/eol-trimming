@@ -15,4 +15,10 @@ public class EndOfLineTrimmingTest {
     assertThat(EOL.trim("a "), equalTo("a"));
     assertThat(EOL.trim("a  "), equalTo("a"));
   }
+
+  @Test
+  public void trimmingBlankLine() throws Throwable {
+    assertThat(EOL.trim(" "), equalTo(""));
+  }
+
 }
