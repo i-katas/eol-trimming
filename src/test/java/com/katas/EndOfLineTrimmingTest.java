@@ -39,4 +39,11 @@ public class EndOfLineTrimmingTest {
     assertThat(EOL.skip("  ", 1, -1), equalTo(2));
   }
 
+  @Test
+  public void skipLeftWhitespaces() throws Throwable {
+    assertThat(EOL.skip("a", 0, 1), equalTo(0));
+    assertThat(EOL.skip(" ", 0, 1), equalTo(1));
+    assertThat(EOL.skip("  ", 0, 1), equalTo(2));
+  }
+
 }

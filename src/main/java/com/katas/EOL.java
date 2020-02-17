@@ -21,9 +21,9 @@ public class EOL {
 
   public static int skip(String s, int pos, int dir) {
     int n = 0;
-    while(pos >= 0 && s.charAt(pos) == ' ') {
+    for(int size = s.length(); pos >= 0 && pos < size && s.charAt(pos) == ' '; ) {
       n++;
-      pos--;
+      pos += dir;
     }
     return n;
   }
