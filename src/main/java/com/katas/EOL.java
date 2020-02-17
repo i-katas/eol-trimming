@@ -17,4 +17,13 @@ public class EOL {
     }
     return out.toString();
   }
+
+  public static int skip(String s, int pos) {
+    int n = 0;
+    while(pos >= 0 && s.charAt(pos) == ' ') {
+      n++;
+      pos--;
+    }
+    return n;
+  }
 }
